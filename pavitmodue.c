@@ -2,6 +2,11 @@
 #include <linux/kernel.h>
 #include <linux/sched.h>
 #include <linux/pid.h>
+#include <linux/moduleparam.h>
+#include <linux/unistd.h>
+#include <linux/types.h>
+#include <linux/syscalls.h>
+
 
 static int pid;
 module_param(pid, int, 0);
