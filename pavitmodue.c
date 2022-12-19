@@ -22,8 +22,10 @@ static int __init pid_details_init(void)
     }
 
     printk(KERN_INFO "Process name: %s\n", task->comm);
-    printk(KERN_INFO "Process state: %ld\n", task->state);
-    printk(KERN_INFO "Process priority: %d\n", task->prio);
+    printk(KERN_INFO "Process PID: %d\n", task->pid);
+    printk(KERN_INFO "Process UID: %d\n", task->cred->uid.val);
+    printk(KERN_INFO "Process Group ID: %d\n", task->group_leader->pid);
+    
 
     return 0;
 }
